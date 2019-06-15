@@ -3,14 +3,27 @@
 
 
 def is_odd(a_number):
+    if a_number % 2 == 0:
+        return False
+    elif a_number % 2 != 0:
+        return True
     """Return True if a_number is odd, and False if a_number is even.
 
     Look into modulo division using the '%' operator as one way of doing this.
     """
-    return None
 
 
 def fix_it(moves=True, should_move=True):
+    if moves:
+        if should_move:
+            return "No Problem"
+        else:
+            return "Duct Tape"
+    else:
+        if should_move:
+            return "WD-40"
+        else:
+            return "No Problem"
     """Decide what to do.
 
     Using the engineering flowchart (in week2 folder of the CODE1161-2019
@@ -25,30 +38,37 @@ def fix_it(moves=True, should_move=True):
     Most people write this function with 4 return statements. 
     As an extra challenge, see if you can get that down to three.
     """
-    return None
 
+def loops_1a(r = 10):
+    thelist= ['*', '*', '*', '*', '*', '*', '*', '*', '*']
+    for loops_1a in range(len(thelist)):
+        thelist.append('*')
+        return (thelist)
 
-def loops_1a():
+    
     """Make 10 stars.
-
     Using a for loop
     return a list of 10 items, each one a string with exacly one star in it.
     E.g.: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     """
-    return None
+    
 
 
 def loops_1c(number_of_items=5, symbol="#"):
+    loops_1c = [symbol] * number_of_items
+    return loops_1c
     """Respond to variables.
 
     Using any method, return a list of number_of_items items, each one a
     string with exacly one symbol in it.
     E.g.: ['#', '#', '#', '#', '#']
     """
-    return None
 
 
 def loops_2():
+    star_list = ["*"] * 10
+    loops_2 = [star_list] * 10
+    return loops_2
     """Make a big square starfield.
 
     return a list of 10 items, each one a list of 10 items,
@@ -66,10 +86,21 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    return None
 
 
 def loops_3():
+    lst0 = ["0"] * 10
+    lst1 = ['1'] * 10
+    lst2 = ['2'] * 10
+    lst3 = ['3'] * 10
+    lst4 = ['4'] * 10
+    lst5 = ['5'] * 10
+    lst6 = ['6'] * 10
+    lst7 = ['7'] * 10
+    lst8 = ['8'] * 10
+    lst9 = ['9'] * 10
+    loops_3 = [lst0, lst1, lst2, lst3, lst4, lst5, lst6, lst7, lst8, lst9]
+    return loops_3
     """Make a rising block of numbers.
 
     Return this:
@@ -90,10 +121,13 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    return None
+    
 
 
 def loops_4():
+    list_loop4 = ['0', '1', '2','3', '4', '5', '6', '7', '8', '9']
+    loops_4 = [list_loop4] * 10
+    return loops_4 
     """Make a block of numbers that rises left to right.
 
     Return this:
@@ -110,10 +144,15 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    return None
+
 
 
 def loops_5():
+    listi = ['i0', 'i1', 'i2', 'i3', 'i4', 'i5', 'i6', 'i7', 'i8', 'i9']
+    listj = ['j0', 'j1', 'j2', 'j3', 'j4']
+    listx = [', ']
+    loops_5 = {[listi[0] + listx[0] + listj[0, 5]] + [listi[1] + listx[0] + listj[0, 5]] + [listi[2] + listx[0] + listj[0, 5]] + [listi[3] + listx[0] + listj[0, 5]] + [listi[4] + listx[0] + listj[0, 5]] + [listi[5] + listx[0] + listj[0, 5]] + [listi[6] + listx[0] + listj[0, 5]] + [listi[7] + listx[0] + listj[0, 5]] + [listi[8] + listx[0] + listj[0, 5]] + [listi[9] + listx[0] + listj[0, 5]]}
+    return loops_5
     """Make the coordinates of the block.
 
     Return this:
@@ -137,10 +176,13 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-    return None
+    
 
 
 def loops_6():
+    numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    loops_6 = {[numbers[0]] + numbers[0,1] + numbers[0,2] + numbers[0,3] + numbers[0,4] + numbers[0,5] + numbers[0,6] + numbers[0,7] + numbers[0,8] + numbers[0,9]}
+    return loops_6
     """Make a wedge of numbers.
 
     Return this:
@@ -160,7 +202,6 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    return None
 
 
 def loops_7():
