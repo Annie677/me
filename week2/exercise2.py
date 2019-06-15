@@ -13,6 +13,7 @@ def getLetter(index):
     return alphabet
 
 
+
 def week2exersise2(index):
     indices = [12, 2, 26, 7, 0, 12, 12, 4, 17]
     wordArray = map(getLetter, indices)

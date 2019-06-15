@@ -30,5 +30,6 @@ then
 list = [item] * the_amount_of_items
 ps, it also works for the list * list or list * number
 
+
 I didn't quite get the loops_3 question in exercise3, so I create 10 lists which doesn't looks like a good way to solve this problem. I have no idea how to create 10 repeated lists with the range(10). :(
     
