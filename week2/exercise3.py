@@ -41,7 +41,7 @@ def fix_it(moves=True, should_move=True):
 
 def loops_1a(r = 10):
     thelist= ['*', '*', '*', '*', '*', '*', '*', '*', '*']
-    for loops_1a in range(len(thelist)):
+    for loops_1a in range(9):
         thelist.append('*')
         return (thelist)
 
@@ -55,8 +55,12 @@ def loops_1a(r = 10):
 
 
 def loops_1c(number_of_items=5, symbol="#"):
-    loops_1c = [symbol] * number_of_items
-    return loops_1c
+    #loops_1c = [symbol] * number_of_items
+    #return loops_1c
+    myList = []
+    for myNumber in range(number_of_items):
+        myList.append(symbol )
+    return myList
     """Respond to variables.
 
     Using any method, return a list of number_of_items items, each one a
@@ -151,7 +155,7 @@ def loops_5():
     listi = ['i0', 'i1', 'i2', 'i3', 'i4', 'i5', 'i6', 'i7', 'i8', 'i9']
     listj = ['j0', 'j1', 'j2', 'j3', 'j4']
     listx = [', ']
-    loops_5 = {[listi[0] + listx[0] + listj[0, 5]] + [listi[1] + listx[0] + listj[0, 5]] + [listi[2] + listx[0] + listj[0, 5]] + [listi[3] + listx[0] + listj[0, 5]] + [listi[4] + listx[0] + listj[0, 5]] + [listi[5] + listx[0] + listj[0, 5]] + [listi[6] + listx[0] + listj[0, 5]] + [listi[7] + listx[0] + listj[0, 5]] + [listi[8] + listx[0] + listj[0, 5]] + [listi[9] + listx[0] + listj[0, 5]]}
+    loops_5 = [[listi[0] + listx[0] + listj[0, 5]] + [listi[1] + listx[0] + listj[0, 5]] + [listi[2] + listx[0] + listj[0, 5]] + [listi[3] + listx[0] + listj[0, 5]] + [listi[4] + listx[0] + listj[0, 5]] + [listi[5] + listx[0] + listj[0, 5]] + [listi[6] + listx[0] + listj[0, 5]] + [listi[7] + listx[0] + listj[0, 5]] + [listi[8] + listx[0] + listj[0, 5]] + [listi[9] + listx[0] + listj[0, 5]]]
     return loops_5
     """Make the coordinates of the block.
 

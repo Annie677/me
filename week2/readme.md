@@ -47,3 +47,13 @@ idx = 0
     while idx < len(my_list):
     print (my_list[idx])
     idx = idx + 1
+
+4. list(range(5))
+this will show " [0, 1, 2, 3, 4]
+
+list (range(1,5))
+this will show "[1, 2, 3, 4]
+
+list(range(10,20,2))
+this will show:
+[10, 12, 14, 18]

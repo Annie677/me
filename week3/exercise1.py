@@ -6,21 +6,28 @@ Modify each function until the tests pass.
 
 
 def loop_ranger(start, stop=None, step=1):
+    my_list = []
+    my_number = start
+    while my_number < stop:
+         my_list.append(my_number)
+         my_number += step
+    return my_list
     """Return a list of numbers between start and stop in steps of step.
 
     Do this using any method apart from JUST using range()
     The look up the docs for range(), you can answer this with just the range 
     function, but we'd like you to do it the long way, probably using a loop.
     """
-    return None
 
 
 def lone_ranger(start, stop, step):
+    for indx in range(10):
+        
+        return 
     """Duplicate the functionality of range.
 
     Look up the docs for range() and wrap it in a 1:1 way
     """
-    return None
 
 
 def two_step_ranger(start, stop):
