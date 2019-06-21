@@ -33,3 +33,17 @@ ps, it also works for the list * list or list * number
 
 I didn't quite get the loops_3 question in exercise3, so I create 10 lists which doesn't looks like a good way to solve this problem. I have no idea how to create 10 repeated lists with the range(10). :(
     
+The "range" example
+for idx in range(5):
+    print (indx)
+
+This will show, "[0,1,2,3,4]"
+
+2. for idx in range(len(my_list)):
+
+3. 
+my_list = [10, 23, 48,99,102]
+idx = 0
+    while idx < len(my_list):
+    print (my_list[idx])
+    idx = idx + 1
