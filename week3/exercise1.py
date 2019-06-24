@@ -43,15 +43,29 @@ def two_step_ranger(start, stop):
     """
 
 
-def stubborn_asker(low, high):
-    """Ask for a number between low and high until actually given one.
+def stubborn_asker(low, high, answer):
+    import random
+    for answer in range()
+    while answer < low or answer > high:
+        if answer < low:
+            print("Too small")
+        if answer > high:
+            print("Too large")
+        if low <= answer <= high:
+            print ("Yeah!")
+            break
+            return answer
 
-    Ask for a number, and if the response is outside the bounds keep asking
-    until you get a number that you think is OK
+        
 
-    Look up the docs for input
-    """
-    return None
+
+    #"""Ask for a number between low and high until actually given one.
+
+    #Ask for a number, and if the response is outside the bounds keep asking
+    #until you get a number that you think is OK
+
+    #Look up the docs for input
+   # """
 
 
 def not_number_rejector(message):
