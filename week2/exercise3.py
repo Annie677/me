@@ -42,7 +42,7 @@ def fix_it(moves=True, should_move=True):
 def loops_1a(r = 10):
     thelist= ['*', '*', '*', '*', '*', '*', '*', '*', '*']
     for loops_1a in range(9):
-        thelist.append('*')
+        thelist.append("*")
         return (thelist)
 
     
@@ -59,7 +59,7 @@ def loops_1c(number_of_items=5, symbol="#"):
     #return loops_1c
     myList = []
     for myNumber in range(number_of_items):
-        myList.append(symbol )
+        myList.append(symbol)
     return myList
     """Respond to variables.
 
@@ -69,10 +69,14 @@ def loops_1c(number_of_items=5, symbol="#"):
     """
 
 
-def loops_2():
-    star_list = ["*"] * 10
-    loops_2 = [star_list] * 10
-    return loops_2
+def loops_2(number_of_stars=10, number_of_list=10, star="*"):
+    theList = []
+    myList = [theList] * 10
+    #star_list = ["*"] * 10
+    #loops_2 = [star_list] * 10
+    for myNumber in range(10):
+        theList.append(star)
+    return myList
     """Make a big square starfield.
 
     return a list of 10 items, each one a list of 10 items,
@@ -93,18 +97,15 @@ def loops_2():
 
 
 def loops_3():
-    lst0 = ["0"] * 10
-    lst1 = ['1'] * 10
-    lst2 = ['2'] * 10
-    lst3 = ['3'] * 10
-    lst4 = ['4'] * 10
-    lst5 = ['5'] * 10
-    lst6 = ['6'] * 10
-    lst7 = ['7'] * 10
-    lst8 = ['8'] * 10
-    lst9 = ['9'] * 10
-    loops_3 = [lst0, lst1, lst2, lst3, lst4, lst5, lst6, lst7, lst8, lst9]
-    return loops_3
+    myList = []
+    for myNumber in range(0,9):
+        myList.append(str(myNumber) * 10)
+        return myList
+   # lst0 = ["0"] * 10, lst1 = ['1'] * 10, lst2 = ['2'] * 10
+   # lst3 = ['3'] * 10, lst4 = ['4'] * 10, lst5 = ['5'] * 10
+   #lst6 = ['6'] * 10, lst7 = ['7'] * 10, lst8 = ['8'] * 10
+#lst9 = ['9'] * 10, loops_3 = [lst0, lst1, lst2, lst3, lst4, lst5, lst6, lst7, lst8, lst9]
+
     """Make a rising block of numbers.
 
     Return this:
@@ -154,9 +155,8 @@ def loops_4():
 def loops_5():
     listi = ['i0', 'i1', 'i2', 'i3', 'i4', 'i5', 'i6', 'i7', 'i8', 'i9']
     listj = ['j0', 'j1', 'j2', 'j3', 'j4']
-    listx = [', ']
-    loops_5 = [[listi[0] + listx[0] + listj[0, 5]] + [listi[1] + listx[0] + listj[0, 5]] + [listi[2] + listx[0] + listj[0, 5]] + [listi[3] + listx[0] + listj[0, 5]] + [listi[4] + listx[0] + listj[0, 5]] + [listi[5] + listx[0] + listj[0, 5]] + [listi[6] + listx[0] + listj[0, 5]] + [listi[7] + listx[0] + listj[0, 5]] + [listi[8] + listx[0] + listj[0, 5]] + [listi[9] + listx[0] + listj[0, 5]]]
-    return loops_5
+    list_x = []
+    return 
     """Make the coordinates of the block.
 
     Return this:
