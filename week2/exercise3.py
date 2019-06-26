@@ -97,16 +97,20 @@ def loops_2(number_of_stars=10, number_of_list=10, star="*"):
 
 
 def loops_3():
-    myList = []
-    for myNumber in range(0,9):
-        myList.append(str(myNumber) * 10)
-        return myList
-   # lst0 = ["0"] * 10, lst1 = ['1'] * 10, lst2 = ['2'] * 10
-   # lst3 = ['3'] * 10, lst4 = ['4'] * 10, lst5 = ['5'] * 10
-   #lst6 = ['6'] * 10, lst7 = ['7'] * 10, lst8 = ['8'] * 10
-#lst9 = ['9'] * 10, loops_3 = [lst0, lst1, lst2, lst3, lst4, lst5, lst6, lst7, lst8, lst9]
+    lst0 = ["0"] * 10
+    lst1 = ["1"] * 10
+    lst2 = ['2'] * 10
+    lst3 = ['3'] * 10
+    lst4 = ['4'] * 10
+    lst5 = ['5'] * 10
+    lst6 = ['6'] * 10
+    lst7 = ['7'] * 10
+    lst8 = ['8'] * 10
+    lst9 = ['9'] * 10
+    my_list = [lst0, lst1, lst2, lst3, lst4, lst5, lst6, lst7, lst8, lst9]
+    return my_list
 
-    """Make a rising block of numbers.
+"""Make a rising block of numbers.
 
     Return this:
     [
@@ -155,8 +159,19 @@ def loops_4():
 def loops_5():
     listi = ['i0', 'i1', 'i2', 'i3', 'i4', 'i5', 'i6', 'i7', 'i8', 'i9']
     listj = ['j0', 'j1', 'j2', 'j3', 'j4']
-    list_x = []
-    return 
+    list0 = list('({0}, {1})'.format('i0',listj))
+    list1 = list("({0}, {1})".format('i1',listj))
+    list2 = list("({0}, {1})".format('i2',listj))
+    list3 = list("({0}, {1})".format('i3',listj))
+    list4 = list("({0}, {1})".format('i4',listj))
+    list5 = list("({0}, {1})".format('i5',listj))
+    list6 = list("({0}, {1})".format('i6',listj))
+    list7 = list("({0}, {1})".format('i7',listj))
+    list8 = list("({0}, {1})".format('i8',listj))
+    list9 = list("({0}, {1})".format('i9',listj))
+    mylist = [list0, list1, list2, list3, list4, list5, list6, list7, list8, list9]
+    return mylist
+
     """Make the coordinates of the block.
 
     Return this:
@@ -185,7 +200,7 @@ def loops_5():
 
 def loops_6():
     numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-    loops_6 = {[numbers[0]] + numbers[0,1] + numbers[0,2] + numbers[0,3] + numbers[0,4] + numbers[0,5] + numbers[0,6] + numbers[0,7] + numbers[0,8] + numbers[0,9]}
+    
     return loops_6
     """Make a wedge of numbers.
 
