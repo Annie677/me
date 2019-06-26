@@ -97,17 +97,12 @@ def loops_2(number_of_stars=10, number_of_list=10, star="*"):
 
 
 def loops_3():
-    lst0 = ["0"] * 10
-    lst1 = ["1"] * 10
-    lst2 = ['2'] * 10
-    lst3 = ['3'] * 10
-    lst4 = ['4'] * 10
-    lst5 = ['5'] * 10
-    lst6 = ['6'] * 10
-    lst7 = ['7'] * 10
-    lst8 = ['8'] * 10
-    lst9 = ['9'] * 10
-    my_list = [lst0, lst1, lst2, lst3, lst4, lst5, lst6, lst7, lst8, lst9]
+    my_list = []
+    for i in range(10):
+        row = []
+        for num in range(10):
+            row.append(str(i))
+        my_list.append(row)
     return my_list
 
 """Make a rising block of numbers.
@@ -157,20 +152,15 @@ def loops_4():
 
 
 def loops_5():
-    listi = ['i0', 'i1', 'i2', 'i3', 'i4', 'i5', 'i6', 'i7', 'i8', 'i9']
-    listj = ['j0', 'j1', 'j2', 'j3', 'j4']
-    mergelist = []
-    step = 1
-    i = 0 
-    for j in listj:
-        block = list('({0}, {1})'.format(listi[i], listj[j]))
-        if 5 < len(block) <= 50:
-            i += step
-            block1 = list('({0}, {1})'.format(listi[i], listj[j]))
-            continue
-            mergelist.append(block, block1)
-            return mergelist
-            
+    block = []
+    for i in range(10):
+        row = []
+        for j in range(5):
+            row.append('(i{0}, j{1})'.format(i, j))
+        block.append(row)
+    return block
+
+
 
     
 
@@ -201,10 +191,14 @@ def loops_5():
 
 
 def loops_6():
-    number_list = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-    numberList = []
-    while True:
-        
+    myList = []
+    for i in range(10):
+        line = []
+        for j in range(i + 1):
+            line.append(str(j))
+        myList.append(line)
+    return myList
+
     """Make a wedge of numbers.
 
     Return this:
@@ -224,9 +218,26 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    return None
+  
 
 def loops_7():
+    pyramid = []
+    for i in range(5):
+        row = list("*" * 9)
+        left = int((9-1)/2 - i)
+        right = int((9+1)/2 + i)
+        for j in range(0, left):
+            row[j] = str(" ")
+        for j in range(right, 9):
+            row[j] = str(" ")
+        pyramid.append(row)
+    return pyramid
+
+        # "*" = 2i -1
+        # therefore blank parts = 10 -2i
+        #left = (10 -2i)/2 -1
+        #right = (10 - 2i)/2 +i
+        
     """Make a pyramid.
 
     Return this:
@@ -247,7 +258,6 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
 
 
 def lp(some_kind_of_list, exercise_name):

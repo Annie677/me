@@ -57,3 +57,30 @@ this will show "[1, 2, 3, 4]
 list(range(10,20,2))
 this will show:
 [10, 12, 14, 18]
+
+5. instead of doing:
+lst0 = ["0"] * 10
+    lst1 = ["1"] * 10
+    ...
+    my_list = [lst0, lst1, lst2, lst3, lst4, lst5, lst6, lst7, lst8, lst9]
+Two 'for loop' is able to provide the same results. I tried to use a 'while loop' or merging two lists, too. But they all didn't work. 
+"for i in list1:" means the items inside of the list1, therefore, 
+"for i in list1:
+    A_list = []
+    for j in list2:
+        B_list.append(i)"
+In here, it's picking up the items from list1 and adding them into B_list and multiply with the amount of the items which are in the list2. 
+    
+For the loops_7, i tried to use the format(), however, it just keeps showing a SyntaxError which I have no idea why does it wrong. 
+
+def loops_7():
+    blank = str("\n")
+    star = str( "*" )
+    pyramid = []
+    for item in range(5):
+        # "*" = 2i -1
+        blankA = blank * ((9-(2 * item - 1)/2)
+        starA = star * (2 * item - 1)
+        row = '{0}{1}{0}'.format(blankA, starA)
+        pyramid.append(list(row))
+    return pyramid
