@@ -9,8 +9,8 @@ linter with no errors or warnings!
 import string
 
 def getLetter(index):
-    alphabet[index] = string.ascii_lowercase + " "
-    return alphabet
+    alphabet = string.ascii_lowercase + " "
+    return alphabet[index]
 
 
 
