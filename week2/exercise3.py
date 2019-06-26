@@ -159,18 +159,20 @@ def loops_4():
 def loops_5():
     listi = ['i0', 'i1', 'i2', 'i3', 'i4', 'i5', 'i6', 'i7', 'i8', 'i9']
     listj = ['j0', 'j1', 'j2', 'j3', 'j4']
-    list0 = list('({0}, {1})'.format('i0',listj))
-    list1 = list("({0}, {1})".format('i1',listj))
-    list2 = list("({0}, {1})".format('i2',listj))
-    list3 = list("({0}, {1})".format('i3',listj))
-    list4 = list("({0}, {1})".format('i4',listj))
-    list5 = list("({0}, {1})".format('i5',listj))
-    list6 = list("({0}, {1})".format('i6',listj))
-    list7 = list("({0}, {1})".format('i7',listj))
-    list8 = list("({0}, {1})".format('i8',listj))
-    list9 = list("({0}, {1})".format('i9',listj))
-    mylist = [list0, list1, list2, list3, list4, list5, list6, list7, list8, list9]
-    return mylist
+    mergelist = []
+    step = 1
+    i = 0 
+    for j in listj:
+        block = list('({0}, {1})'.format(listi[i], listj[j]))
+        if 5 < len(block) <= 50:
+            i += step
+            block1 = list('({0}, {1})'.format(listi[i], listj[j]))
+            continue
+            mergelist.append(block, block1)
+            return mergelist
+            
+
+    
 
     """Make the coordinates of the block.
 
@@ -199,9 +201,10 @@ def loops_5():
 
 
 def loops_6():
-    numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-    
-    return loops_6
+    number_list = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    numberList = []
+    while True:
+        
     """Make a wedge of numbers.
 
     Return this:
@@ -221,7 +224,7 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-
+    return None
 
 def loops_7():
     """Make a pyramid.
