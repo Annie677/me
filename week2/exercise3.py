@@ -233,10 +233,6 @@ def loops_7():
         pyramid.append(row)
     return pyramid
 
-        # "*" = 2i -1
-        # therefore blank parts = 10 -2i
-        #left = (10 -2i)/2 -1
-        #right = (10 - 2i)/2 +i
         
     """Make a pyramid.
 
