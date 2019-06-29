@@ -43,18 +43,19 @@ def two_step_ranger(start, stop):
     """
 
 
-def stubborn_asker(low, high, answer):
-    import random
-    for answer in range()
-    while answer < low or answer > high:
-        if answer < low:
-            print("Too small")
-        if answer > high:
-            print("Too large")
-        if low <= answer <= high:
-            print ("Yeah!")
-            break
+def stubborn_asker(low, high):
+    answer = int(input())
+    question = "Please try to guess a number between {0} and {1}.".format(low, high)
+    while True:
+        message = "Your number is {}".format(answer)
+        answer = int (input(message))
+        print(question)
+        if low < answer < high:
+            print ("That's right. {} is between {low} and {high} ".format(answer, low = low, high=high))
             return answer
+        else:
+            print("Your number is {}. Please try again.".format(answer))
+    
 
         
 
@@ -69,16 +70,44 @@ def stubborn_asker(low, high, answer):
 
 
 def not_number_rejector(message):
+    question = "Please give me a number: "
+    your_input = input()
+    while True:
+        print (question)
+        try:
+            your_input = int(input(question))
+            print("Thank you, {} is a number.".format(your_input))
+            return your_input
+        except:
+            print ("{input} is not a number. Please try again.".format(input = your_input))
+
+
+
     """Ask for a number repeatedly until actually given one.
 
     Ask for a number, and if the response is actually NOT a number 
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    return None
 
 
 def super_asker(low, high):
+    question = "Please give me a number which is between {low} and {high}".format(low = low, high= high)
+    message = "Try to write your number. "
+    while True:
+        print(question)
+        print (message)
+        try:
+            answer = int(input(message))
+            if low < answer < high:
+                print("Yes, the number {} is between {low} and {high}".format(answer, low = low, high=high))
+                return answer
+            else: 
+                print("Your number is {}, please try again.".format(answer))
+        except:
+            answer = input(message)
+            print("{} is not a number, please give me a number.".format(answer))
+
     """Robust asking function.
 
     Combine what you learnt from stubborn_asker and not_number_rejector
@@ -86,7 +115,6 @@ def super_asker(low, high):
     Try to call at least one of the other functions to minimise the
     amount of code.
     """
-    return None
 
 
 if __name__ == "__main__":
