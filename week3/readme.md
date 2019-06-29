@@ -1,10 +1,11 @@
-TODO: Reflect on what you learned this week and what is still unclear
+Week 3:
 'While' loop is able to run a command as a prerequisite. 
 I think that the "range" is much more easier to return the expected results than the "while loop" in the exerise1. 
 range (start, stop, step) is able to provide the needed items from the "beginning" to the "ending" with the expected steps. 
 HOWEVER, the loops are more complicated to return the same list that I have to write " my_number += step" and define the "my_number" in the loop. 
 
 In the guessing game "stubborn_asker", I created a while loop to ask the number, but it does not work. 
+
 "def stubborn_asker(low, high):
     answer = int(input(question))
     question = "Please try to guess a number between {0} and {1}, Your number is {2}.".format(low, high, answer)
@@ -28,5 +29,8 @@ In the question "not_number_rejector", I tried to use the "isdigit()" to decide 
             print ("Thank you.{} is a number".format(answer))"
 However, the answer input was a list and it shows an error:
 "exception: 'list' object has no attribute 'isdigit'". 
-So I try to use the "try except" which is able to pick up the error from the codes. 
+So I try to use the "try except" to decide whether the input is a number or not. 
+
+In the exercise2, there is a completed guessing game. 
+“import random" and "randomint()" are able to create a random number.
 
