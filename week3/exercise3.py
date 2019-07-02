@@ -11,41 +11,44 @@ def advancedGuessingGame():
   print("Please guess a number between _ and _?")
   lower_bound = input()
   upper_bound = input()
-
+  actualNumber = input()
+  actualNumber = random.randint(lower_bound, upper_bound)
+  guessed = False
+  guess_number = input()
   while True:
+    guess_number = input()
     try:
       lower_bound = int(input("Enter a lower bound: "))
       upper_bound = int(input("Enter an upper bound: "))
-      print("Great, a number between {lower} and {upper}.".format(lower = lower_bound, upper = upper_bound))
-      break
-    except:
+      if lower_bound < upper_bound:
+        print("Great, a number between {lower} and {upper}.".format(lower = lower_bound, upper = upper_bound))
+        try:
+          guess_number = int(input("Guess a number: "))
+          print("Your number is {},".format(guess_number))
+          while not guessed:
+            if guess_number == actualNumber:
+              print("You got it! It was {}".format(actualNumber))
+              guessed = True
+              return "You got it!"
+            elif guess_number < actualNumber:
+              print("Too small. Please try again.")
+            else:
+              print("Too big.Please try again.")
+            
+        except:
+          guess_number = input("Guess a number:")
+      else:
+        print("Sorry, please try again.")
+    except ValueError:
       lower_bound = input("Enter a lower bound: ")
       upper_bound = input("Enter an upper bound: ")
       print("Please give me two numbers.")
-
-  actual_number = random.randint(lower_bound, upper_bound)
-  guess_number = input()
-  guessed = False
-  message = "Try to guess a number."
   
-  while not guessed:
-    print(message)
-    try:
-      guess_number = int(input(message))
-      print ("Your guessed number is {}".format(guess_number))
-      if guess_number == actual_number:
-        print("You got it! It was {}".format(actual_number))
-        guessed = True
-      elif guessedNumber < actualNumber:
-        print("Too small, try again :'(")
-      else:
-        print("Too big, try again :'(")
+  
+  
+  
 
-    except:
-      guess_number = input(message)
-      print("{} is not a number, please give me a number.".format(guess_number))
-
-  return "You got it!"
+  
 
 
 
