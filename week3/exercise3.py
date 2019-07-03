@@ -24,24 +24,23 @@ def advancedGuessingGame():
         print("Great, a number between {lower} and {upper}.".format(lower = lower_bound, upper = upper_bound))
         try:
           guess_number = int(input("Guess a number: "))
-          print("Your number is {},".format(guess_number))
-          while not guessed:
+          while True:
+            guess_number = int(input("Guess a number: "))
+            print("Your number is {},".format(guess_number))
             if guess_number == actualNumber:
               print("You got it! It was {}".format(actualNumber))
-              guessed = True
               return "You got it!"
             elif guess_number < actualNumber:
               print("Too small. Please try again.")
-            else:
+              
+            if guess_number > actualNumber:
               print("Too big.Please try again.")
-            
+          
         except:
           guess_number = input("Guess a number:")
       else:
         print("Sorry, please try again.")
     except ValueError:
-      lower_bound = input("Enter a lower bound: ")
-      upper_bound = input("Enter an upper bound: ")
       print("Please give me two numbers.")
   
   
