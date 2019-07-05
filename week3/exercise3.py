@@ -5,53 +5,18 @@ Steps on the way to making your own guessing game.
 
 import random
 
+def not_number_rejector(message):
+    question = message
+    while True:
+        try:
+            your_input = int(input(question))
+            print("Thank you, {} is a number.".format(your_input))
+            return your_input
+        except:
+            print ("that is not a number. Please try again.")
+
 
 def advancedGuessingGame():
-  print("Welcome to the guessing game!")
-  print("Please guess a number between _ and _?")
-  lower_bound = input()
-  upper_bound = input()
-  actualNumber = input()
-  actualNumber = random.randint(lower_bound, upper_bound)
-  guessed = False
-  guess_number = input()
-  while True:
-    guess_number = input()
-    try:
-      lower_bound = int(input("Enter a lower bound: "))
-      upper_bound = int(input("Enter an upper bound: "))
-      if lower_bound < upper_bound:
-        print("Great, a number between {lower} and {upper}.".format(lower = lower_bound, upper = upper_bound))
-        try:
-          guess_number = int(input("Guess a number: "))
-          while True:
-            guess_number = int(input("Guess a number: "))
-            print("Your number is {},".format(guess_number))
-            if guess_number == actualNumber:
-              print("You got it! It was {}".format(actualNumber))
-              return "You got it!"
-            elif guess_number < actualNumber:
-              print("Too small. Please try again.")
-              
-            if guess_number > actualNumber:
-              print("Too big.Please try again.")
-          
-        except:
-          guess_number = input("Guess a number:")
-      else:
-        print("Sorry, please try again.")
-    except ValueError:
-      print("Please give me two numbers.")
-  
-  
-  
-  
-
-  
-
-
-
-
   """Play a guessing game with a user.
 
     The exercise here is to rewrite the exampleGuessingGame() function
@@ -69,10 +34,31 @@ def advancedGuessingGame():
     merge it with code from excercise 1.
     Remember to think modular. Try to keep your functions small and single
     purpose if you can!
-    """
+  """
+  print("Welcome to the guessing game!")
+  print("Please guess a number between _ and _?")
 
-    #return "You got it!"
-    # the tests are looking for the exact string "You got it!". Don't modify that!
+  lower_bound = not_number_rejector("Enter a lower bound: ")
+  upper_bound = not_number_rejector("Enter an upper bound: ")
+  while lower_bound >= upper_bound:
+      lower_bound = not_number_rejector("Enter a lower bound: ")
+      upper_bound = not_number_rejector("Enter an upper bound: ")
+
+  print("Great, a number between {lower} and {upper}.".format(lower=lower_bound, 
+                                                              upper=upper_bound))
+  guess_number = not_number_rejector("Guess a number: ")
+  actualNumber = random.randint(lower_bound, upper_bound)
+  while True:
+    print("Your number is {},".format(guess_number))
+    if guess_number == actualNumber:
+      print("It was {}".format(actualNumber))
+      return "You got it!"
+    elif guess_number < actualNumber:
+      print("Too small. Please try again.")
+      guess_number = not_number_rejector("Guess a number: ")
+    if guess_number > actualNumber:
+      print("Too big.Please try again.")   
+      guess_number = not_number_rejector("Guess a number: ")      
 
 
 if __name__ == "__main__":
