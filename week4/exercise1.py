@@ -125,7 +125,14 @@ def diarist():
          might be why. Try in rather than == and that might help.
     TIP: remember to commit 'lasers.pew' and push it to your repo, otherwise
          the test will have nothing to look at.
+    TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
+    string_to_write = "QAQ"
+    A_Path = 'week4/my/file.wow'
+    f = open(A_Path)
+    f.write(string_to_write)
+    f.close()
+    print("Done!")
     pass
 
 
