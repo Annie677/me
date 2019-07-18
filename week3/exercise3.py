@@ -14,6 +14,7 @@ def not_number_rejector(message):
             return your_input
         except:
             print ("that is not a number. Please try again.")
+            your_input = int(input(question))
 
 
 def advancedGuessingGame():
