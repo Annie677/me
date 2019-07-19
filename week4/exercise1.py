@@ -6,6 +6,7 @@ import os
 import requests
 import inspect
 import sys
+import time
 
 # Handy constants
 LOCAL = os.path.dirname(os.path.realpath(__file__))  # the context of this file
@@ -85,8 +86,18 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &minLength=
     """
-    
-    pass
+    key ="9lks49qinixmzg5nc0ezwi5vpb94p9et2twi1tbv6sx40ktc7"
+    template = "http://api.wordnik.com/v4/words.json/randomWords?api_key=9lks49qinixmzg5nc0ezwi5vpb94p9et2twi1tbv6sx40ktc7&minLength={length}&maxLength={length}&limit=1"
+    url = template.format(length=5)
+    print(url)
+    r = requests.get(url)
+    if r.status_code is 200:
+        the_json = json.loads(r.text)
+        word = the_json[0]["word"]
+    elif r.status_code is 404:
+        print(404)
+        time.sleep(0.5)
+
 
 
 def pokedex(low=1, high=5):

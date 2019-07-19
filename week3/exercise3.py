@@ -6,15 +6,13 @@ Steps on the way to making your own guessing game.
 import random
 
 def not_number_rejector(message):
-    question = message
     while True:
         try:
-            your_input = int(input(question))
+            your_input = int(input(message))
             print("Thank you, {} is a number.".format(your_input))
             return your_input
         except:
             print ("that is not a number. Please try again.")
-            your_input = int(input(question))
 
 
 def advancedGuessingGame():
