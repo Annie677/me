@@ -34,3 +34,5 @@ So I try to use the "try except" to decide whether the input is a number or not.
 In the exercise2, there is a completed guessing game. 
 “import random" and "randomint()" are able to create a random number.
 
+In the exercise4, the binary_search is a way for picking up the right number faster. The binary search will divide the number list into two parts, then it will looking up the right number in the "low part" or "high part". If the right number is higher than the middle number, then it will use the "high part" which is faster and easier than looking up the number in the whole list. 
+
