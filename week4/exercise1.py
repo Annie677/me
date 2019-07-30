@@ -145,13 +145,13 @@ def diarist():
          the test will have nothing to look at.
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
-    A_Path = "/Users/guanlinhe/Documents/1161/me/week4/lasers.pew "
+    A_Path = "/Users/guanlinhe/Documents/1161/me/week4/lasers.pew"
     myfile = open (A_Path, 'w')
     string_to_write = "6"
     myfile.write(string_to_write)
     print(string_to_write)
     myfile.close()
-    return myfile
+    pass
 
 
 if __name__ == "__main__":
