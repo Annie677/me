@@ -86,17 +86,17 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &minLength=
     """
-    key ="9lks49qinixmzg5nc0ezwi5vpb94p9et2twi1tbv6sx40ktc7"
+    key = "9lks49qinixmzg5nc0ezwi5vpb94p9et2twi1tbv6sx40ktc7"
     template = "http://api.wordnik.com/v4/words.json/randomWords?api_key=9lks49qinixmzg5nc0ezwi5vpb94p9et2twi1tbv6sx40ktc7&minLength={length}&maxLength={length}&limit=1"
-    url = template.format(length=5)
-    print(url)
-    r = requests.get(url)
-    if r.status_code is 200:
-        the_json = json.loads(r.text)
-        word = the_json[0]["word"]
-    elif r.status_code is 404:
-        print(404)
-        time.sleep(0.5)
+    url = template.format(length=3)
+    for words in range(18):
+        r = requests.get(url)
+        if r.status_code is 200:
+            the_json = json.loads(r.text)
+            word = the_json[0]["word"]
+        elif r.status_code is 404:
+            print(404)
+            time.sleep(0.5)
 
 
 
@@ -115,16 +115,21 @@ def pokedex(low=1, high=5):
          variable and then future access will be easier.
     """
     template = "https://pokeapi.co/api/v2/pokemon/{id}"
-    
     #the code in the loop
     for pokemon in range(low,high):
+        lst = []
         url = template.format(base=template, id=pokemon)
         r = requests.get(url)
         if r.status_code is 200:
             the_json = json.loads(r.text)
+            name = the_json["name"]
             height = the_json["height"]
+            weight = the_json["weight"]
+            print (name, height, weight)
+        elif r.status_code is 404:
+            print(404)
             #pause here
-        return {"name": None, "weight": None, "height": None}
+        return {"name": name, "weight": weight, "height": height}
 
 
 def diarist():
@@ -141,13 +146,12 @@ def diarist():
          the test will have nothing to look at.
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
-    string_to_write = "QAQ"
-    A_Path = 'week4/my/file.wow'
+    string_to_write = "6"
+    A_Path = '‎⁨/⁨Documents⁩/1161⁩/⁨me⁩/⁨week4⁩/lasers.pew'
     f = open(A_Path)
-    f.write(string_to_write)
+    f.write("6")
     f.close()
-    print("Done!")
-    pass
+    return f
 
 
 if __name__ == "__main__":
