@@ -50,7 +50,7 @@ def countdown(message, start, stop, completion_message):
     message = "Getting ready to "
     countdown_list = []
     for i in range(start, stop):
-        if start < stop:
+        if start == start:
             countdown_list.append(message + " " + start)
             start = start -1
         elif start == stop:
