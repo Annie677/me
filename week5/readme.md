@@ -6,3 +6,7 @@ def recur_fibo(n):
 print(recur_fibo(1))
 
 #1 1 2 3 5 8 13 21 34
+
+The first question repeated the "Get ready to strat in" and the only variables are the numbers. Therefore, a for loop will provide the numbers counting from 9 to 1. 
+
+It will be easier to use a loop rather than repeating.

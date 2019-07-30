@@ -27,17 +27,21 @@ def do_bunch_of_bad_things():
 
     triangle = {"base": 3, "height": 4}
     triangle["hypotenuse"] = triangle["base"] ** 2 + triangle["height"] ** 2
-    print("area = " + str((triangle["base"] * triangle["height"]) / 2))
+    base = triangle["base"]
+    height = triangle["height"]
+    hypotenuse = triangle["hypotenuse"]
+    print("area = " + str((base * height) / 2))
     print("side lengths are:")
-    print("base: {}".format(triangle["base"]))
-    print("height: {}".format(triangle["height"]))
-    print("hypotenuse: {}".format(triangle["hypotenuse"]))
+    print("base: {}".format(base))
+    print("height: {}".format(height))
+    print("hypotenuse: {}".format(hypotenuse))
 
     another_hyp = 5 ** 2 + 6 ** 2
     print(another_hyp)
 
     yet_another_hyp = 40 ** 2 + 30 ** 2
     print(yet_another_hyp)
+    return 
 
 
 # return a list of countdown messages, much like in the bad function above.
@@ -45,7 +49,12 @@ def do_bunch_of_bad_things():
 def countdown(message, start, stop, completion_message):
     message = "Getting ready to "
     countdown_list = []
-    countdown_list.append()
+    for i in range(start, stop):
+        if start < stop:
+            countdown_list.append(message + " " + start)
+            start = start -1
+        elif start == stop:
+            countdown_list.append("Let's go!")
     return countdown_list
 
 
@@ -59,19 +68,24 @@ def countdown(message, start, stop, completion_message):
 # The stub functions are made for you, and each one is tested, so this should
 # hand hold quite nicely.
 def calculate_hypotenuse(base, height):
-    return base ** 2
+    hypotenuse = (base ** 2 + height ** 2) ** 0.5
+    return hypotenuse
 
 
 def calculate_area(base, height):
-    pass
+    area = (base * height) / 2 
+    return area
 
 
 def calculate_perimeter(base, height):
-    pass
-
+    hypotenuse = (base ** 2 + height ** 2) ** 0.5
+    perimeter = base + height + hypotenuse
+    return perimeter
 
 def calculate_aspect(base, height):
-    pass
+    hypotenuse = (base ** 2 + height ** 2) ** 0.5
+    aspect = base 
+    return aspect
 
 
 # Make sure you reuse the functions you've already got
