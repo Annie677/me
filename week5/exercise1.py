@@ -35,7 +35,7 @@ def do_bunch_of_bad_things():
     print("base: {}".format(base))
     print("height: {}".format(height))
     print("hypotenuse: {}".format(hypotenuse))
-
+    
     another_hyp = 5 ** 2 + 6 ** 2
     print(another_hyp)
 
@@ -83,13 +83,13 @@ def calculate_perimeter(base, height):
     return perimeter
 
 def calculate_aspect(base, height):
-    hypotenuse = (base ** 2 + height ** 2) ** 0.5
-    a = base 
-    b = height 
-    c = hypotenuse
-    s = (a + b + c) / 2
-    AR = (a * b * c) / (8.0 * (s - a) * (s - b) * (s - c))
-    return AR
+    if base == height:
+        aspect = "equal"
+    elif base < height:
+        aspect = "tall"
+    elif base > height:
+        aspect = "wide"
+    return aspect
 
 
 # Make sure you reuse the functions you've already got
