@@ -20,16 +20,10 @@ you'll need to figure out for yourself what to do.
 # much better job of what it's trying to do. Once you've has a little look,
 # move on, and eventually delete this function. (And this comment!)
 def do_bunch_of_bad_things():
-    print("Getting ready to start in 9")
-    print("Getting ready to start in 8")
-    print("Getting ready to start in 7")
-    print("Getting ready to start in 6")
-    print("Getting ready to start in 5")
-    print("Getting ready to start in 4")
-    print("Getting ready to start in 3")
-    print("Getting ready to start in 2")
-    print("Getting ready to start in 1")
-    print("Let's go!")
+    for i in range (9,0,-1):
+        print("Getting ready to strat in {}".format(i))
+        continue
+    print ("Let's go!")
 
     triangle = {"base": 3, "height": 4}
     triangle["hypotenuse"] = triangle["base"] ** 2 + triangle["height"] ** 2
