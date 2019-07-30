@@ -84,8 +84,12 @@ def calculate_perimeter(base, height):
 
 def calculate_aspect(base, height):
     hypotenuse = (base ** 2 + height ** 2) ** 0.5
-    aspect = base 
-    return aspect
+    a = base 
+    b = height 
+    c = hypotenuse
+    s = (a + b + c) / 2
+    AR = (a * b * c) / (8.0 * (s - a) * (s - b) * (s - c))
+    return AR
 
 
 # Make sure you reuse the functions you've already got
