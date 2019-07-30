@@ -117,7 +117,6 @@ def pokedex(low=1, high=5):
     template = "https://pokeapi.co/api/v2/pokemon/{id}"
     #the code in the loop
     for pokemon in range(low,high):
-        lst = []
         url = template.format(base=template, id=pokemon)
         r = requests.get(url)
         if r.status_code is 200:
@@ -146,12 +145,13 @@ def diarist():
          the test will have nothing to look at.
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
+    A_Path = "/Users/guanlinhe/Documents/1161/me/week4/lasers.pew "
+    myfile = open (A_Path, 'w')
     string_to_write = "6"
-    A_Path = '‎⁨/⁨Documents⁩/1161⁩/⁨me⁩/⁨week4⁩/lasers.pew'
-    f = open(A_Path)
-    f.write("6")
-    f.close()
-    return f
+    myfile.write(string_to_write)
+    print(string_to_write)
+    myfile.close()
+    return myfile
 
 
 if __name__ == "__main__":
