@@ -35,7 +35,7 @@ def do_bunch_of_bad_things():
     print("base: {}".format(base))
     print("height: {}".format(height))
     print("hypotenuse: {}".format(hypotenuse))
-    
+
     another_hyp = 5 ** 2 + 6 ** 2
     print(another_hyp)
 
@@ -96,13 +96,13 @@ def calculate_aspect(base, height):
 # Don't reinvent the wheel
 def get_triangle_facts(base, height, units="mm"):
     return {
-        "area": None,
-        "perimeter": None,
-        "height": None,
-        "base": None,
-        "hypotenuse": None,
-        "aspect": None,
-        "units": None,
+        "area": calculate_area(base, height),
+        "perimeter": calculate_perimeter(base, height),
+        "height": height,
+        "base": base,
+        "hypotenuse": calculate_hypotenuse(base, height),
+        "aspect": calculate_aspect(base, height),
+        "units": units,
     }
 
 
