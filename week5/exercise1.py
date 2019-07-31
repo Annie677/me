@@ -47,14 +47,15 @@ def do_bunch_of_bad_things():
 # return a list of countdown messages, much like in the bad function above.
 # It should say something different in the last message.
 def countdown(message, start, stop, completion_message):
-    message = "Getting ready to "
     countdown_list = []
-    for i in range(start, stop):
+    for i in range (start, stop-2, -1):
         if start == start:
-            countdown_list.append(message + " " + start)
+            countdown_list.append(message + str(start))
+            print("{message} {number}".format(message=message, number=str(start)))
             start = start -1
-        elif start == stop:
-            countdown_list.append("Let's go!")
+        if start == stop-2:
+            countdown_list.append(completion_message)
+            print (completion_message)
     return countdown_list
 
 
@@ -95,7 +96,7 @@ def calculate_aspect(base, height):
 # Make sure you reuse the functions you've already got
 # Don't reinvent the wheel
 def get_triangle_facts(base, height, units="mm"):
-    return {
+    triangle_fact= {
         "area": calculate_area(base, height),
         "perimeter": calculate_perimeter(base, height),
         "height": height,
@@ -104,6 +105,7 @@ def get_triangle_facts(base, height, units="mm"):
         "aspect": calculate_aspect(base, height),
         "units": units,
     }
+    return triangle_fact
 
 
 # this should return a multi line string that looks a bit like this:
@@ -131,29 +133,48 @@ def tell_me_about_this_right_triangle(facts_dictionary):
                   |  \\
                   |   \\
                   ------
-                  {base}"""
+                  {base}""".format(height =facts_dictionary["height"],
+                                base= facts_dictionary["height"],
+                                hypotenuse= facts_dictionary["hypotenuse"])
     wide = """
             {hypotenuse}
              ↓         ∕ |
                    ∕     | <-{height}
                ∕         |
             ∕------------|
-              {base}"""
+              {base}""".format(height =facts_dictionary["height"],
+                                base= facts_dictionary["height"],
+                                hypotenuse= facts_dictionary["hypotenuse"])
     equal = """
             {height}
             |
             |     |⋱
             |____>|  ⋱ <-{hypotenuse}
                   |____⋱
-                  {base}"""
+                  {base}""".format(height =facts_dictionary["height"],
+                                base= facts_dictionary["height"],
+                                hypotenuse= facts_dictionary["hypotenuse"])
 
     pattern = (
-        "This triangle is {area}{units}²\n"
-        "It has a perimeter of {perimeter}{units}\n"
-        "This is a {aspect} triangle.\n"
+        "This triangle is {area}{units}²\n".format(area=facts_dictionary["area"],
+                                                                    units="mm") +
+        "It has a perimeter of {perimeter}{units}\n".format(perimeter=facts_dictionary["perimeter"],
+                                                                            units="mm") +
+        "This is a {aspect} triangle.\n".format(aspect= facts_dictionary["aspect"])
     )
 
     facts = pattern.format(**facts_dictionary)
+    
+    if facts_dictionary["aspect"] == "tall":
+        print(tall + pattern)
+        
+    elif facts_dictionary["aspect"]== "wide":
+        print(wide + pattern)
+        
+    else:
+        print (equal+pattern)
+        
+#python3 ../course/week5/tests.py
 
 
 def triangle_master(base, height, return_diagram=False, return_dictionary=False):
