@@ -93,25 +93,11 @@ def abba(source="abba", guard=3):
     """
     #in this question, "a" is replaced by "bba" and "b" is replaced by "aob", 
     #"o" is replaced into "oa"
-    def abba_rules(line):
-        if line == "a":
-            return "bba"
-        elif line == "b":
-            return "aob"
-        elif line == "o":
-            return "oa"
-        else:
-            return line
-
-    parts = source.split(" ")
-    result = list(map(abba_rules, parts))
-    new_line = " ".join(result)
-    guard -= 1
-    if guard > 0:
-       return abba(new_line, guard)
-    else:
-       return new_line
-
+    for i in range (guard, 0, -1):
+        source = "abba".replace("a", "bba")
+        source = "abba".replace("b", "aob")
+        source = "abba".replace("o", "oa")
+    return source
 
     def apply_rules(letter, guard):
         """Control the substitution.
@@ -121,22 +107,14 @@ def abba(source="abba", guard=3):
         Hint: when guard == -1 return the letter.
         """
         if letter == "a":
-            return "aobaobbba"
+            return "bba"
         elif letter == "b":
-            return "bbaoaaob"
+            return "aob"
         elif letter == "o":
-            return "oabba"
+            return "oa"
         elif guard == -1:
             return letter
 
-    parts = source.split(" ")
-    result = list(map(apply_rules, parts))
-    new_letter = " ".join(result)
-    guard -= 1
-    if guard > 0:
-        return italian_dinner(new_letter, guard)
-    else:
-        return new_letter
     # write the rest of the function here
     
 
