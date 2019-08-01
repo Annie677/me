@@ -86,21 +86,35 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &minLength=
     """
+    "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength=20"
     #key = "9lks49qinixmzg5nc0ezwi5vpb94p9et2twi1tbv6sx40ktc7"
     template = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={length}"
     the_min = 3
     the_max = 20
     wordy_list = []
-    for i in range(the_min, the_max, 2):
+    wordy_list2 =[]
+    for i in range(the_min, the_max+1, 2):
         url = template.format(base=template, length= i)
         r = requests.get(url)
         if r.status_code is 200:
-            the_json = json.loads(r.text)
-            wordy_list.append(the_json[2])
+            the_words = json.loads(r.text)
+            wordy_list.append(the_words[2])
+            print (wordy_list)
+            for i in range (the_max, the_min-1, -2):
+                url = template.format(base=template, length= i)
+                r = requests.get(url)
+                if r.status_code is 200:
+                    the_words = json.loads(r.text)
+                    wordy_list2.append(the_words[2])
+                    print (wordy_list2)
+                elif r.status_code is 404:
+                    print(404)
+                    time.sleep(0.5)
         elif r.status_code is 404:
             print(404)
             time.sleep(0.5)
-
+    the_list = wordy_list + wordy_list2
+    return the_list
 
 
 def pokedex(low=1, high=5):
