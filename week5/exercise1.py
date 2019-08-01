@@ -183,29 +183,31 @@ def tell_me_about_this_right_triangle(facts_dictionary):
 
 
 def triangle_master(base, height, return_diagram=False, return_dictionary=False):
+    triangle = get_triangle_facts(base, height, units="mm")
+    diagram = tell_me_about_this_right_triangle(triangle)
     if return_diagram and return_dictionary:
-        return 
+        return str(diagram) + str(triangle)
     elif return_diagram:
-        return None
+        return str(diagram)
     elif return_dictionary:
-        return None
+        return str(triangle)
     else:
         print("You're an odd one, you don't want anything!")
 
-
-def wordy_pyramid(api_key):
+#"http://api.wordnik.com/v4/words.json/randomWords?" is replaced by the 
+# https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={length}
+def wordy_pyramid():
     import requests
 
     baseURL = (
-        "http://api.wordnik.com/v4/words.json/randomWords?"
-        "api_key={api_key}"
+        "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={length}"
         "&minLength={length}"
         "&maxLength={length}"
         "&limit=1"
     )
     pyramid_list = []
     for i in range(3, 21, 2):
-        url = baseURL.format(api_key="", length=i)
+        url = baseURL.format(base = baseURL, length=i)
         r = requests.get(url)
         if r.status_code is 200:
             message = r.json()[0]["word"]
@@ -213,7 +215,7 @@ def wordy_pyramid(api_key):
         else:
             print("failed a request", r.status_code, i)
     for i in range(20, 3, -2):
-        url = baseURL.format(api_key="", length=i)
+        url = baseURL.format(base = baseURL, length=i)
         r = requests.get(url)
         if r.status_code is 200:
             message = r.json()[0]["word"]
@@ -224,12 +226,36 @@ def wordy_pyramid(api_key):
 
 
 def get_a_word_of_length_n(length):
-    
-    pass
+    import requests
+    length_list = []
+    limit = 1
+    template = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={length} "
+    for i in range (limit):
+        url = template.format(base= template, length=i)
+        r = requests.get(url)
+        if r.status_code is 200:
+            word = r.json[0]["word"]
+            length_list.append(word)
+            return length_list
+        else:
+            print ("error?")
+
 
 
 def list_of_words_with_lengths(list_of_lengths):
-    pass
+    import requests
+    list_of_lengths = []
+    limit = 20
+    template = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={length}"
+    for i in range(limit):
+        url = template.format(base= template, length= i)
+        r = requests.get(url)
+        if r.status_code is 200:
+            words = r.json[0]["word"]
+            list_of_lengths.append(words)
+            return list_of_lengths
+        else:
+            print("Sth is wrong.")
 
 
 if __name__ == "__main__":
