@@ -86,14 +86,17 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &minLength=
     """
-    key = "9lks49qinixmzg5nc0ezwi5vpb94p9et2twi1tbv6sx40ktc7"
-    template = "http://api.wordnik.com/v4/words.json/randomWords?api_key=9lks49qinixmzg5nc0ezwi5vpb94p9et2twi1tbv6sx40ktc7&minLength={length}&maxLength={length}&limit=1"
-    url = template.format(length=3)
-    for words in range(18):
+    #key = "9lks49qinixmzg5nc0ezwi5vpb94p9et2twi1tbv6sx40ktc7"
+    template = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={length}"
+    the_min = 3
+    the_max = 20
+    wordy_list = []
+    for i in range(the_min, the_max, 2):
+        url = template.format(base=template, length= i)
         r = requests.get(url)
         if r.status_code is 200:
             the_json = json.loads(r.text)
-            word = the_json[0]["word"]
+            wordy_list.append(the_json[2])
         elif r.status_code is 404:
             print(404)
             time.sleep(0.5)
