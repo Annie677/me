@@ -48,14 +48,14 @@ def do_bunch_of_bad_things():
 # It should say something different in the last message.
 def countdown(message, start, stop, completion_message):
     countdown_list = []
-    for i in range (start, stop-2, -1):
+    for i in range (start, stop-1, -1):
         if start == start:
             countdown_list.append(message + str(start))
             print("{message} {number}".format(message=message, number=str(start)))
             start = start -1
-        if start == stop-1:
-            countdown_list.append(completion_message)
-            print (completion_message)
+            if start <= stop-1:
+                countdown_list.append(completion_message)
+                print (completion_message)
     return countdown_list
 
 
