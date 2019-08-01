@@ -164,22 +164,27 @@ def tell_me_about_this_right_triangle(facts_dictionary):
     )
 
     facts = pattern.format(**facts_dictionary)
-    
+
     if facts_dictionary["aspect"] == "tall":
         print(tall + pattern)
+        triangle = tall
         
     elif facts_dictionary["aspect"]== "wide":
         print(wide + pattern)
-        
+        triangle = wide
+
     else:
         print (equal+pattern)
-        
+        triangle = equal
+    return facts + triangle
+    
+
 #python3 ../course/week5/tests.py
 
 
 def triangle_master(base, height, return_diagram=False, return_dictionary=False):
     if return_diagram and return_dictionary:
-        return None
+        return 
     elif return_diagram:
         return None
     elif return_dictionary:
@@ -219,6 +224,7 @@ def wordy_pyramid(api_key):
 
 
 def get_a_word_of_length_n(length):
+    
     pass
 
 
