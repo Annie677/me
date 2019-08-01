@@ -94,10 +94,19 @@ def abba(source="abba", guard=3):
     #in this question, "a" is replaced by "bba" and "b" is replaced by "aob", 
     #"o" is replaced into "oa"
     for i in range (guard, 0, -1):
-        source = "abba".replace("a", "bba")
-        source = "abba".replace("b", "aob")
-        source = "abba".replace("o", "oa")
+        source = source.replace("a", "bba")
+        source = source.replace("b", "aob")
+        source = source.replace("o", "oa")
     return source
+
+    parts = source.split(" ")
+    result = list(map(apply_rules, parts))
+    new_string = " ".join(result)
+    guard -= 1
+    if guard > 0:
+        return abba(new_string, guard)
+    else:
+        return new_string
 
     def apply_rules(letter, guard):
         """Control the substitution.
@@ -112,7 +121,7 @@ def abba(source="abba", guard=3):
             return "aob"
         elif letter == "o":
             return "oa"
-        elif guard == -1:
+        else:
             return letter
 
     # write the rest of the function here
