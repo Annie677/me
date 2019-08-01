@@ -231,10 +231,10 @@ def get_a_word_of_length_n(length):
     limit = 1
     template = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={length} "
     for i in range (limit):
-        url = template.format(base= template, length=i)
+        url = template.format(base= template, length= i)
         r = requests.get(url)
         if r.status_code is 200:
-            word = r.json[0]["word"]
+            word = r.json()[0]["word"]
             length_list.append(word)
             return length_list
         else:
@@ -244,19 +244,17 @@ def get_a_word_of_length_n(length):
 
 def list_of_words_with_lengths(list_of_lengths):
     import requests
-    list_of_lengths = []
-    limit = 20
-    template = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={length}"
-    for i in range(limit):
-        url = template.format(base= template, length= i)
+
+    length_list = []
+    template = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={length} "
+    for i in range(3,21, 2):
+        url = template.format(base=template, length = list_of_lengths)
         r = requests.get(url)
         if r.status_code is 200:
-            words = r.json[0]["word"]
-            list_of_lengths.append(words)
-            return list_of_lengths
-        else:
-            print("Sth is wrong.")
-
+            words = r.json()[0]["word"]
+            length_list.append(words)
+    return length_list
+        
 
 if __name__ == "__main__":
     do_bunch_of_bad_things()
