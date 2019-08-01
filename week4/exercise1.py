@@ -119,19 +119,22 @@ def pokedex(low=1, high=5):
     """
     template = "https://pokeapi.co/api/v2/pokemon/{id}"
     #the code in the loop
+    stature = 0
     for pokemon in range(low,high):
         url = template.format(base=template, id=pokemon)
         r = requests.get(url)
         if r.status_code is 200:
             the_json = json.loads(r.text)
-            name = the_json["name"]
-            height = the_json["height"]
-            weight = the_json["weight"]
-            print (name, height, weight)
+            pokemon_stature = the_json["height"]
+            if pokemon_stature > stature:
+                stature = pokemon_stature
+                name = the_json["name"]
+                weight = the_json["weight"]
+                height = the_json["height"]
         elif r.status_code is 404:
             print(404)
             #pause here
-        return {"name": name, "weight": weight, "height": height}
+    return {"name": name, "weight": weight, "height": height}
 
 
 def diarist():
