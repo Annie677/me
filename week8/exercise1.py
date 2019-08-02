@@ -104,8 +104,14 @@ def best_letter_for_pets():
     import string
 
     the_alphabet = string.ascii_lowercase
+    length = 0
+    for single_letter in the_alphabet:
+        if len(pet_filter(letter = single_letter)) > length:
+            best_letter = single_letter
+            length = len(pet_filter(single_letter))
+    return best_letter
+    
 
-    return ""
 
 
 def make_filler_text_dictionary():
