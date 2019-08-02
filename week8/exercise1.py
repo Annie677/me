@@ -147,7 +147,7 @@ def make_filler_text_dictionary():
         url = template.format(base=template, length= i)
         r = requests.get(url)
         if r.status_code is 200:
-            the_words = .loads(r.text)
+            the_words = json.loads(r.text)
             list_1.append(the_words[2])
             dictionary.update(list_1)
     return dictionary
