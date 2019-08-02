@@ -149,7 +149,7 @@ def make_filler_text_dictionary():
         if r.status_code is 200:
             the_words = json.loads(r.text)
             list_1.append(the_words[1])
-            dictionary.append(list_1)
+            dictionary.update(list_1)
     return dictionary
 
 
