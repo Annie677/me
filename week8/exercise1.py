@@ -143,7 +143,7 @@ def make_filler_text_dictionary():
     template = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={length}"
     list_1 = []
     dictionary ={}
-    for i in range(3):
+    for i in range(1,3,1):
         url = template.format(base=template, length= i)
         r = requests.get(url)
         if r.status_code is 200:
