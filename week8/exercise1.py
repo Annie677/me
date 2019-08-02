@@ -142,15 +142,15 @@ def make_filler_text_dictionary():
     import requests
     template = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={length}"
     list_1 = []
-    list_2 =[]
+    dictionary ={}
     for i in range(3):
         url = template.format(base=template, length= i)
         r = requests.get(url)
         if r.status_code is 200:
             the_words = json.loads(r.text)
             list_1.append(the_words[1])
-            list_2.append(list_1)
-    return {list_2}
+            dictionary.append(list_1)
+    return dictionary
 
 
 def random_filler_text(number_of_words=200):
