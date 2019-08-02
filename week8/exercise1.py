@@ -47,7 +47,7 @@ def fizz_buzz():
     """
     fizzBuzzList = []
     # your code here
-    for number in range (1, 100):
+    for number in range (1, 101):
         if number % 3 == 0 and number % 5 == 0:
             fizzBuzzList.append("FizzBuzz")
         elif number % 3 == 0:
