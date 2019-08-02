@@ -47,6 +47,16 @@ def fizz_buzz():
     """
     fizzBuzzList = []
     # your code here
+    for number in range (1, 100):
+        if number / 3 == 1 and number /5 == 1:
+            fizzBuzzList.append("FizzBuzz")
+        else:
+            if number / 3 == 1:
+                fizzBuzzList.append("Fizz")
+            elif number / 5 ==1:
+                fizzBuzzList.append("Buzz")
+            else:
+                fizzBuzzList.append(number)
 
     return fizzBuzzList
 
