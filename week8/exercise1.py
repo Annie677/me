@@ -89,8 +89,11 @@ def pet_filter(letter="a"):
             "siamese fighting fish","fancy rat and lab rat","mink","red fox",
             "hedgehog","guppy",]
     # fmt: on
-
-    return []
+    pet_list = []
+    for i in pets:
+        if letter in i:
+            pet_list.append(i)
+    return pet_list
 
 
 def best_letter_for_pets():
