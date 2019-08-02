@@ -48,15 +48,14 @@ def fizz_buzz():
     fizzBuzzList = []
     # your code here
     for number in range (1, 100):
-        if number / 3 == 1 and number /5 == 1:
+        if number % 3 == 0 and number % 5 == 0:
             fizzBuzzList.append("FizzBuzz")
+        elif number % 3 == 0:
+            fizzBuzzList.append("Fizz")
+        elif number % 5 == 0:
+            fizzBuzzList.append("Buzz")
         else:
-            if number / 3 == 1:
-                fizzBuzzList.append("Fizz")
-            elif number / 5 ==1:
-                fizzBuzzList.append("Buzz")
-            else:
-                fizzBuzzList.append(number)
+            fizzBuzzList.append(number)
 
     return fizzBuzzList
 
