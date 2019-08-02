@@ -70,8 +70,10 @@ def put_behind_bars(input_string="very naughty boy"):
     TIP: consider using the 'join' method in Python.
     TIP: make sure that you have a pipe on both ends of the string.
     """
-
-    return ""
+    bar = "|"
+    bar_end = "|"
+    line = bar.join(input_string)
+    return (bar_end + line + bar_end)
 
 
 def pet_filter(letter="a"):
